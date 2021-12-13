@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Poverty risk by Population and Race</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <b> Corona Cases        :  <input type="text", name="Cases", placeholder="enter 1"> <br><br>
+      Corona Deaths           :  <input type="text", name="Deaths", placeholder="enter 2"> <br><br>
+      Population              :  <input type="text", name="Population", placeholder="enter 3"> <br><br>
+      White Male              :  <input type="text", name='W_Male', placeholder="enter 4"> <br><br>
+      White Female            :  <input type="text", name='W_Female', placeholder="enter 5"> <br><br>
+      Black Male              :  <input type="text", name='B_Male', placeholder="enter 6"> <br><br>
+      Black Female            :  <input type="text", name='B_Female', placeholder="enter 7"> <br><br>
+      Hispanic Male           :  <input type="text", name='H_Male', placeholder="enter 8"> <br><br>
+      Hispanic Female         :  <input type="text", name='H_Female', placeholder="enter 9"> <br><br>
+      American Indian Male    :  <input type="text", name='I_Male', placeholder="enter 10"> <br><br>
+      American Indian Female  :  <input type="text", name='I_Female', placeholder="enter 11"> <br><br>
+      Asian Male              :  <input type="text", name='A_Male', placeholder="enter 12"> <br><br>
+      Asian Female            :  <input type="text", name='A_Female', placeholder="enter 13"> <br><br>
+      Native Hawaiian Male    :  <input type="text", name='NH_Male', placeholder="enter 14"> <br><br>
+      Native Hawaiian Female  :  <input type="text", name='NH_Female', placeholder="enter 15"> <br><br></b>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+   </form>
+ </div>
+</body>
+</html>
